@@ -1,0 +1,75 @@
+import java.util.*;
+class GrandFather
+{
+String gname;
+int p1;
+void getGrandFather(String gname,int p1)
+{
+this.gname=gname;
+this.p1=p1;
+}
+void showGrandFather()
+{
+System.out.println("Grand Father="+gname);
+System.out.println("Grand Father property="+p1);
+}
+}
+class Father extends GrandFather
+{
+String fname;
+int p2;
+void getFather(String fname,int p2)
+{
+this.fname=fname;
+this.p2=p2;
+}
+void showFather()
+{
+System.out.println("Father="+fname);
+System.out.println("Father property="+p2);
+System.out.println("Father total property="+(p1+p2));
+}
+}
+class Daughter extends Father
+{
+String dname;
+int p3;
+void getDaughter(String dname,int p3)
+{
+this.dname=dname;
+this.p3=p3;
+}
+void showDaughter()
+{
+System.out.println("Daughter="+dname);
+System.out.println("Daughter property="+p1);
+System.out.println("Daughter total property="+(p1+p2+p3));
+}
+}
+class SingleInheri
+{
+public static void main(String args[])
+{
+Daughter d1=new Daughter();
+d1.getGrandFather("rrr",300000);
+d1.showGrandFather();
+d1.getFather("sss",200000);
+d1.showFather();
+d1.getDaughter("kkk",100000);
+d1.showDaughter();
+}
+}
+
+OUTPUT:
+
+C:\Users\User\Desktop\555>javac SingleInheri.java
+
+C:\Users\User\Desktop\555>java SingleInheri
+Grand Father=rrr
+Grand Father property=300000
+Father=sss
+Father property=200000
+Father total property=500000
+Daughter=kkk
+Daughter property=300000
+Daughter total property=600000
