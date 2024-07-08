@@ -1,0 +1,49 @@
+class Sample
+{
+int a,b;
+void get(int a,int b)
+{
+this.a=a;
+this.b=b;
+}
+void show()
+{
+System.out.println("a="+a+"b="+b);
+}
+}
+class Addition extends Sample
+{
+void total()
+{
+System.out.println("Addition="+(a+b));
+}
+}
+class Product extends Sample
+{
+void Multiply()
+{
+System.out.println("Product="+(a*b));
+}
+}
+class Heirarchical
+{
+public static void main(String args[])
+{
+Addition a1=new Addition();
+a1.get(124,567);
+a1.show();
+a1.total();
+Product p1=new Product();
+p1.get(5,5);
+p1.show();
+p1.Multiply();
+}
+}
+OUTPUT:
+C:\Users\User\Desktop\555>javac Heirarchical.java
+
+C:\Users\User\Desktop\555>java Heirarchical
+a=124b=567
+Addition=691
+a=5b=5
+Product=25
